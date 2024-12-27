@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣诞树</title>
+    <style>
+        body {
+            background-color: skyblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .tree {
+            position: relative;
+            width: 200px;
+            height: 300px;
+        }
+        /* 绘制圣诞树的不同层 */
+        .tree:before, .tree:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 100px solid transparent;
+            border-right: 100px solid transparent;
+            border-bottom: 100px solid rgb(144, 238, 144); /* 浅绿色 */
+            top: 0;
+        }
+        .tree:before {
+            border-bottom-width: 150px;
+            top: 30px;
+        }
+        .tree:after {
+            border-bottom-width: 200px;
+            top: 60px;
+        }
+        /* 绘制树干 */
+        .trunk {
+            position: absolute;
+            bottom: -50px;
+            left: 50px;
+            width: 100px;
+            height: 50px;
+            background-color: saddlebrown;
+        }
+        /* 装饰球 */
+        .decoration {
+            position: absolute;
+            border-radius: 50%;
+            background-color: red;
+        }
+        .decoration:nth-child(1) {
+            width: 20px;
+            height: 20px;
+            left: 60px;
+            top: 40px;
+        }
+        .decoration:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            left: 90px;
+            top: 80px;
+            background-color: yellow;
+        }
+        .decoration:nth-child(3) {
+            width: 20px;
+            height: 20px;
+            left: 40px;
+            top: 110px;
+            background-color: blue;
+        }
+        .decoration:nth-child(4) {
+            width: 20px;
+            height: 20px;
+            left: 120px;
+            top: 140px;
+            background-color: purple;
+        }
+        .decoration:nth-child(5) {
+            width: 20px;
+            height: 20px;
+            left: 70px;
+            top: 160px;
+            background-color: white;
+        }
+        .decoration:nth-child(6) {
+            width: 20px;
+            height: 20px;
+            left: 110px;
+            top: 180px;
+            background-color: pink;
+        }
+        /* 星星装饰 */
+        .star {
+            position: absolute;
+            top: -30px;
+            left: 85px;
+            width: 30px;
+            height: 30px;
+            background-color: gold;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        }
+    </style>
+</head>
+<body>
+    <div class="tree">
+        <div class="star"></div>  <!-- 星星 -->
+        <div class="decoration"></div> <!-- 装饰球 -->
+        <div class="decoration"></div>
+        <div class="decoration"></div>
+        <div class="decoration"></div>
+        <div class="decoration"></div>
+        <div class="decoration"></div>
+        <div class="trunk"></div> <!-- 树干 -->
+    </div>
+</body>
+</html>
